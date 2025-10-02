@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nwpu-transcript"
+version = "0.1.0"
+description = "Convert NWPU transcript PDFs (CN/EN) to the official Excel upload template"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Your Name" }
+]
+dependencies = [
+  "pdfplumber>=0.10.3",
+]
+keywords = ["NWPU", "transcript", "PDF", "Excel", "education", "grades"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.scripts]
+nwpu-transcript = "nwpu_transcript.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nwpu_transcript"]
+
